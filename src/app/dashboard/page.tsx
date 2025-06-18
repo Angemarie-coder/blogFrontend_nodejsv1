@@ -23,6 +23,8 @@ interface Post {
   media?: { type: string; url: string };
   author: { id: number; name: string };
   createdAt: string;
+  likes: number;
+  comments: number;
 }
 
 interface ApiResponse {
@@ -189,6 +191,12 @@ const AdminDashboard = () => {
                           Date
                         </th>
                         <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                          Likes
+                        </th>
+                        <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                          Comments
+                        </th>
+                        <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                           Actions
                         </th>
                       </tr>
@@ -234,6 +242,8 @@ const AdminDashboard = () => {
                               {new Date(post.createdAt).toLocaleDateString()}
                             </div>
                           </td>
+                          <td className="px-6 py-4">{post.likes}</td>
+                          <td className="px-6 py-4">{post.comments}</td>
                           <td className="px-6 py-4">
                             <div className="flex items-center space-x-2">
                               <button

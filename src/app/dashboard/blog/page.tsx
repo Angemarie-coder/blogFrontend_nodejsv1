@@ -267,23 +267,18 @@ export default function BlogList() {
                       </span>
                     </div>
 
+                    <div className="flex items-center gap-4 mb-4">
+                      <span className="flex items-center text-gray-500 text-xs">
+                        <HandThumbUpIcon className="h-4 w-4 mr-1" /> {post.likes} Likes
+                      </span>
+                      <span className="flex items-center text-gray-500 text-xs">
+                        <ChatBubbleLeftEllipsisIcon className="h-4 w-4 mr-1" /> {post.comments} Comments
+                      </span>
+                    </div>
+
                     <div className="flex items-center text-sm text-gray-500">
                       <CalendarDaysIcon className="h-4 w-4 mr-1" />
                       {new Date(post.createdAt).toLocaleDateString()}
-                    </div>
-
-                    <div className="mt-4 flex items-center space-x-2">
-                      <span className="px-2 py-1 text-xs font-semibold text-gray-600 uppercase tracking-wider">Likes</span>
-                      <button onClick={() => handleLike(post.id)} className="flex items-center text-gray-600 hover:text-blue-600">
-                        <HandThumbUpIcon className="h-5 w-5 mr-1" /> {post.likes}
-                      </button>
-                    </div>
-
-                    <div className="mt-4 flex items-center space-x-2">
-                      <span className="px-2 py-1 text-xs font-semibold text-gray-600 uppercase tracking-wider">Comments</span>
-                      <button onClick={() => handleComment(post.id)} className="flex items-center text-gray-600 hover:text-blue-600">
-                        <ChatBubbleLeftEllipsisIcon className="h-5 w-5 mr-1" /> {post.comments}
-                      </button>
                     </div>
                   </div>
                 </div>
