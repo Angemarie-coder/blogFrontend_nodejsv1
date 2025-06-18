@@ -94,7 +94,7 @@ const AdminDashboard = () => {
   };
 
   const handleEdit = (id: number) => {
-    router.push(`/admin/blog/edit/${id}`); 
+    router.push(`/dashboard/blog/edit/${id}`); 
   };
 
   const handleDelete = async (id: number) => {

@@ -67,7 +67,7 @@ const CreateBlog = () => {
 
       setSuccess("Post created successfully!");
       setTimeout(() => {
-        router.push("/admin/blog");
+        router.push("/dashboard/blog");
       }, 1500);
     } catch (err: any) {
       setError(err.message || "Something went wrong");
@@ -212,7 +212,7 @@ const CreateBlog = () => {
               <div className="flex justify-end space-x-4">
                 <button
                   type="button"
-                  onClick={() => router.push("/admin/blog")}
+                  onClick={() => router.push("/dashboard/blog")}
                   disabled={loading}
                   className="px-6 py-2.5 rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200 disabled:opacity-50"
                 >

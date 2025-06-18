@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import axios from "axios";
 import Sidebar from "@/app/dashboard/Sidebar";
 
@@ -19,8 +19,9 @@ interface Post {
   media?: Media;
 }
 
-export default function EditPost({ params }: { params: Promise<{ id: string }> }) {
-  const resolvedParams = React.use(params);
+export default function EditPost() {
+  const params = useParams();
+  const id = params.id as string;
   const [formData, setFormData] = useState<Post | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -32,7 +33,7 @@ export default function EditPost({ params }: { params: Promise<{ id: string }> }
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/blog/posts/${resolvedParams.id}`, {
+        const response = await axios.get(`http://localhost:5000/blog/posts/${id}`, {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
@@ -40,7 +41,7 @@ export default function EditPost({ params }: { params: Promise<{ id: string }> }
           },
         });
 
-        const postData = response.data.data;
+        const postData = response.data.data.post;
         if (!postData) {
           throw new Error("Post not found");
         }
@@ -60,9 +61,8 @@ export default function EditPost({ params }: { params: Promise<{ id: string }> }
         setLoading(false);
       }
     };
-
-    fetchPost();
-  }, [resolvedParams.id]);
+    if (id) fetchPost();
+  }, [id]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,7 +78,7 @@ export default function EditPost({ params }: { params: Promise<{ id: string }> }
         throw new Error("Invalid status value");
       }
 
-      await axios.put(`http://localhost:5000/blog/posts/${resolvedParams.id}`, formData, {
+      await axios.put(`http://localhost:5000/blog/posts/${id}`, formData, {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -88,7 +88,7 @@ export default function EditPost({ params }: { params: Promise<{ id: string }> }
 
       setSuccess("Post updated successfully!");
       setTimeout(() => {
-        router.push("/admin/blog");
+        router.push("/dashboard/blog");
       }, 1500);
     } catch (err: any) {
       console.error("Error updating post:", err);
@@ -198,65 +198,43 @@ export default function EditPost({ params }: { params: Promise<{ id: string }> }
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Media URL</label>
                     <input
-                      type="url"
+                      type="text"
                       value={formData.media?.url || ""}
-                      onChange={(e) => {
-                        const url = e.target.value;
-                        if (url) {
-                          const type = url.match(/\.(jpg|jpeg|png|gif)$/i)
-                            ? "image"
-                            : url.match(/\.(mp4|webm|ogg)$/i)
-                            ? "video"
-                            : "document";
-                          setFormData({ ...formData, media: { type, url } });
-                        } else {
-                          setFormData({ ...formData, media: undefined });
-                        }
-                      }}
+                      onChange={(e) => setFormData({ ...formData, media: { ...formData.media, url: e.target.value, type: formData.media?.type || "image" } })}
                       disabled={submitting}
                       className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50/50 transition-all duration-200"
-                      placeholder="Enter media URL (image, video, or document)"
+                      placeholder="Enter media URL (optional)"
                     />
-                    <p className="mt-2 text-sm text-gray-500">
-                      Enter a direct URL to an image, video, or document.
-                    </p>
+                    {formData.media && formData.media.type === "image" && formData.media.url && (
+                      <div className="mt-4">
+                        <img
+                          src={formData.media.url}
+                          alt="Media Preview"
+                          className="max-h-48 rounded-lg mx-auto"
+                        />
+                      </div>
+                    )}
                   </div>
 
-                  {formData.media && (
-                    <div className="mt-4">
-                      <div className="bg-gray-50 rounded-xl p-4">
-                        {formData.media.type === "image" && (
-                          <img src={formData.media.url} alt="Preview" className="max-h-48 rounded-lg mx-auto" />
-                        )}
-                        {formData.media.type === "video" && (
-                          <video src={formData.media.url} controls className="max-h-48 rounded-lg mx-auto" />
-                        )}
-                        {formData.media.type === "document" && (
-                          <div className="flex items-center justify-center space-x-2 text-blue-600">
-                            <a href={formData.media.url} className="hover:underline">View Document</a>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
+                  {/* Add more fields as needed */}
                 </div>
               </div>
 
-              <div className="flex justify-end space-x-4">
+              <div className="flex space-x-4">
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="px-6 py-2.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50"
+                >
+                  {submitting ? "Updating..." : "Update Post"}
+                </button>
                 <button
                   type="button"
-                  onClick={() => router.push("/admin/blog")}
+                  onClick={() => router.push("/dashboard/blog")}
                   disabled={submitting}
                   className="px-6 py-2.5 rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200 disabled:opacity-50"
                 >
                   Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="px-6 py-2.5 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50"
-                >
-                  {submitting ? "Saving..." : "Save Changes"}
                 </button>
               </div>
             </form>

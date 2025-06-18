@@ -240,7 +240,7 @@ export default function BlogList() {
                       </h3>
                       <div className="flex space-x-2">
                         <button
-                          onClick={() => router.push(`/admin/blog/edit/${post.id}`)}
+                          onClick={() => router.push(`/dashboard/blog/edit/${post.id}`)}
                           className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-all duration-200"
                           title="Edit"
                         >
@@ -272,22 +272,18 @@ export default function BlogList() {
                       {new Date(post.createdAt).toLocaleDateString()}
                     </div>
 
-                    <div className="mt-4">
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Likes</th>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <button onClick={() => handleLike(post.id)} className="flex items-center text-gray-600 hover:text-blue-600">
-                          <HandThumbUpIcon className="h-5 w-5 mr-1" /> {post.likes}
-                        </button>
-                      </td>
+                    <div className="mt-4 flex items-center space-x-2">
+                      <span className="px-2 py-1 text-xs font-semibold text-gray-600 uppercase tracking-wider">Likes</span>
+                      <button onClick={() => handleLike(post.id)} className="flex items-center text-gray-600 hover:text-blue-600">
+                        <HandThumbUpIcon className="h-5 w-5 mr-1" /> {post.likes}
+                      </button>
                     </div>
 
-                    <div className="mt-4">
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Comments</th>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <button onClick={() => handleComment(post.id)} className="flex items-center text-gray-600 hover:text-blue-600">
-                          <ChatBubbleLeftEllipsisIcon className="h-5 w-5 mr-1" /> {post.comments}
-                        </button>
-                      </td>
+                    <div className="mt-4 flex items-center space-x-2">
+                      <span className="px-2 py-1 text-xs font-semibold text-gray-600 uppercase tracking-wider">Comments</span>
+                      <button onClick={() => handleComment(post.id)} className="flex items-center text-gray-600 hover:text-blue-600">
+                        <ChatBubbleLeftEllipsisIcon className="h-5 w-5 mr-1" /> {post.comments}
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -299,7 +295,7 @@ export default function BlogList() {
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-200/50">
                   <p className="text-gray-600 mb-4">No posts found matching your criteria</p>
                   <Link
-                    href="/admin/blog/create"
+                    href="/dashboard/blog/create"
                     className="inline-flex items-center px-4 py-2.5 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200"
                   >
                     <PlusIcon className="h-5 w-5 mr-2" />
