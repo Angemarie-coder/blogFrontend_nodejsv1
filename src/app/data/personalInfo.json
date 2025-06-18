@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "name": "UWINEZA Ange Marie",
+    "professional_title": "Software Developer",
+    "tagline": "Crafting innovative, user-focused solutions to drive business success.",
+    "photo": {
+      "src": "/images/profile.jpg",
+      "alt": "UWINEZA Ange Marie Professional Photo"
+    },
+    "cta_button": {
+      "text": "View My Projects",
+      "link": "#projects"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "personal_introduction": {
+      "description": "Hello, I’m UWINEZA Ange Marie, a dedicated Software Developer with a passion for creating innovative, user-centric solutions that empower businesses to succeed. I thrive on transforming ideas into functional, impactful applications that solve real-world challenges."
+    },
+    "background_and_interests": {
+      "description": "My journey in software development began with a fascination for problem-solving and technology’s potential to drive change. I’ve built a robust foundation through diverse projects, ranging from web applications to cloud-based systems. Beyond coding, I’m deeply interested in emerging technologies like AI and blockchain, and I enjoy contributing to open-source communities and mentoring aspiring developers. In my free time, I explore tech blogs, experiment with new tools, and engage in collaborative coding initiatives to stay at the forefront of innovation."
+    },
+    "skills_and_technologies": {
+      "description": "I bring a versatile skill set to every project, specializing in:",
+      "technologies": [
+        {
+          "category": "Programming Languages",
+          "items": ["JavaScript", "Python", "Java", "TypeScript"]
+        }
+      ]
+    },
+    "unique_qualities": {
+      "description": "What distinguishes me as a developer is my ability to bridge technical excellence with strategic vision.",
+      "likes":"I like crochetting various handmade clothes and as well designing "
+    }
+  }
+}

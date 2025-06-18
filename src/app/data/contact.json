@@ -1,0 +1,77 @@
+{
+  "contact": {
+    "title": "Contact Me",
+    "contact_form": {
+      "fields": [
+        {
+          "name": "name",
+          "type": "text",
+          "label": "Full Name",
+          "placeholder": "Enter your full name",
+          "validation": {
+            "required": true,
+            "minLength": 2,
+            "errorMessage": "Name is required and must be at least 2 characters long"
+          }
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "label": "Email Address",
+          "placeholder": "Enter your email address",
+          "validation": {
+            "required": true,
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+            "errorMessage": "A valid email address is required"
+          }
+        },
+        {
+          "name": "message",
+          "type": "textarea",
+          "label": "Message",
+          "placeholder": "Enter your message",
+          "validation": {
+            "required": true,
+            "minLength": 10,
+            "maxLength": 500,
+            "errorMessage": "Message is required and must be between 10 and 500 characters"
+          }
+        }
+      ],
+      "submit": {
+        "text": "Send Message",
+        "action": "/api/contact"
+      }
+    },
+    "email": "uwineza.ange@gmail.com",
+    "social_media": [
+      {
+        "platform": "Twitter",
+        "url": "https://twitter.com/uwineza_ange",
+        "icon": "/images/twitter.avif"
+      },
+      {
+        "platform": "Instagram",
+        "url": "https://instagram.com/uwineza_ange",
+        "icon": "/images/icon-instagram.png"
+      }
+    ],
+    "location": {
+      "city": "Kigali",
+      "country": "Rwanda"
+    },
+    "professional_profiles": [
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/in/uwineza-ange-marie",
+        "icon": "/images/linkedin.png"
+      },
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/uwineza-ange",
+        "icon": "/images/github.png"
+      }
+
+    ]
+  }
+}

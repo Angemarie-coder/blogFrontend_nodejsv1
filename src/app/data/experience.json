@@ -1,0 +1,74 @@
+{
+  "experience": {
+    "title": "My Experience",
+    "work_experience": [
+      {
+        "position": "ICT network INTERN",
+        "company": "National Bank Of Rwanda",
+        "location": "Kigali, Rwanda",
+        "duration": "June 2024 - August 2024",
+        "responsibilities": [
+          "Assisted in monitoring and maintaining network infrastructure to ensure secure and reliable connectivity across departments.",
+          "Supported the configuration and troubleshooting of routers, switches, and firewalls under the guidance of senior engineers.",
+          "Participated in the deployment and testing of LAN/WAN setups and network performance optimization tasks."
+         
+        ]
+      },
+      {
+        "position": "Afritec Trainee",
+        "company": "Afritec",
+        "location": "Kigali, Rwanda",
+        "duration": "november 2024 - december 2024",
+        "responsibilities": [
+          "Developed a machine learning model to analyze individual skills and preferences, providing personalized career guidance recommendations"
+        ]
+      }
+    ],
+    "education_background": [
+      {
+        "degree": "Bachelor of Science in Information Technology",
+        "institution": "University of Rwanda",
+        "location": "Kigali, Rwanda",
+        "duration": "Sep 2021 - July 2025",
+        "details": "Graduated with honors, focusing on software engineering, data structures, and algorithms."
+      },
+      {
+        "degree": "A2",
+        "institution": "Saint Mary's High School Kiruhura",
+        "location": "Huye, Kiruhura",
+        "duration": "Sep 2017 - July 2019",
+        "details": "Graduated with honors, focusing on software engineering, data structures, and algorithms."
+      }
+    ],
+    "internships_or_volunteer_work": [
+      {
+        "role": "IT Support Intern",
+        "organization": "Innovate Rwanda",
+        "location": "Kigali, Rwanda",
+        "duration": "november 2024 - jan 2025",
+        "description": "Assisted in developing a cloud-based inventory management system using AWS and Python, improving operational efficiency for local businesses."
+      },
+      {
+        "role": "social media marketing",
+        "organization": "feed a kid foundation",
+        "location": "Remote",
+        "duration": "Jan 2025 - Present",
+        "description": "contributed in marketing to get sponsors."
+      }
+    ],
+    "relevant_coursework_or_certifications": [
+      {
+        "title": "cyberSecurity Essential",
+        "issuer": "Cisco",
+        "date": "Mar 2025",
+        "description": "Demonstrated expertise in designing and deploying scalable systems on AWS."
+      },
+      {
+        "title": "Frontend web developer",
+        "issuer": "AmaliTeck",
+        "date": "Nov 2024",
+        "description": "Completed  building modern web applications with html,css and JavaScript"
+      }
+    ]
+  }
+}

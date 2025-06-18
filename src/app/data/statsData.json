@@ -1,0 +1,6 @@
+[
+    { "icon": "/images/bobo.png", "value": "100+", "title": "Completed Projects" },
+    { "icon": "/images/bobo.png", "value": "20%", "title": "Customer Satisfaction" },
+    { "icon": "/images/bobo.png", "value": "$10M", "title": "Raised Clients" },
+    { "icon": "/images/bobo.png", "value": "2 yrs", "title": "Years in Business" }
+  ]

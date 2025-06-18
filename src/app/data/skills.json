@@ -1,0 +1,23 @@
+{
+  "skills": {
+    "title": "My Skills",
+    "categories": [
+      {
+        "category": "Programming Languages",
+        "items": ["JavaScript", "Python", "Java", "TypeScript"]
+      },
+      {
+        "category": "Frameworks & Libraries",
+        "items": ["React", "Node.js", "Django", "Angular", "Express"]
+      },
+      {
+        "category": "Tools & Platforms",
+        "items": ["Git", "Docker", "Webpack", "Jenkins", "AWS", "Azure", "PostgreSQL", "MongoDB"]
+      },
+      {
+        "category": "Practices & Methodologies",
+        "items": ["Agile Development", "RESTful API Design", "Microservices Architecture", "CI/CD Pipelines"]
+      }
+    ]
+  }
+}

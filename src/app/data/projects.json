@@ -1,0 +1,60 @@
+{
+  "projects": {
+    "title": "My Projects",
+    "items": [
+      {
+        "name": "AI-and-Data-Analytics",
+        "description": "A cloud-based inventory management system designed for small businesses to track stock, manage orders, and generate real-time analytics. The application streamlined operations for clients, reducing manual errors by 30%.",
+        "technologies": ["python","jupyter"],
+        "links": {
+          "live_demo": "",
+          "github": "https://github.com/Angemarie-coder/AI-and-Data-Analytics.git"
+        },
+        "image": {
+          "src": "",
+          "alt": "AI-and-Data-Analytics Screenshot"
+        }
+      },
+      {
+        "name": "conference_project",
+        "description": "A social networking platform for professionals to connect, share insights, and collaborate on projects. Features include real-time chat, profile customization, and secure authentication with JWT.",
+        "technologies": ["python", "HTML", "SQLite", "MongoDB"],
+        "links": {
+          "live_demo": "",
+          "github": "https://github.com/Angemarie-coder/conference_project"
+        },
+        "image": {
+          "src": " ",
+          "alt": "conference_project Screenshot"
+        }
+      },
+      {
+        "name": "Web Development",
+        "description": "An e-learning platform for schools to manage courses, assignments, and student progress. Integrated with a RESTful API and cloud storage, it improved student engagement by 25%.",
+        "technologies": ["HTML,CSS,JavaScript"],
+        "links": {
+          "live_demo": "",
+          "github": "https://github.com/uwineza-ange/edutrack"
+        },
+        "image": {
+          "src": " ",
+          "alt": "Web Development Screenshot"
+        }
+      },
+      {
+        "name": "BlogApp",
+        "description": "A mobile-friendly health tracking app that allows users to log symptoms, schedule appointments, and receive reminders. Built with a focus on accessibility and user-friendly design.",
+        "technologies": ["TypeScript", "Node.js", "Express","postman","MongoDB"],
+        "links": {
+          "live_demo": "",
+          "github": "https://github.com/uwineza-ange"
+        },
+        "image": {
+          "src": " ",
+          "alt": "BlogApp Screenshot"
+        }
+      }
+
+    ]
+  }
+}
