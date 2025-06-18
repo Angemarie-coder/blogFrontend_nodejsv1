@@ -21,6 +21,7 @@ const AdminHeader: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen, onSe
   const [searchQuery, setSearchQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const [name, setName] = useState<string>("");
+  const [profileImage, setProfileImage] = useState<string>("");
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
@@ -42,8 +43,10 @@ const AdminHeader: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen, onSe
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         });
         setName(res.data.data.name);
+        setProfileImage(res.data.data.profileImage || "");
       } catch {
         setName("");
+        setProfileImage("");
       }
     };
     fetchProfile();
@@ -97,7 +100,11 @@ const AdminHeader: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen, onSe
                 className="flex items-center space-x-2 p-2 rounded-xl hover:bg-gray-100 transition-colors duration-200"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
-                <UserCircleIcon className="h-6 w-6 text-gray-600" />
+                {profileImage ? (
+                  <img src={profileImage} alt="Profile" className="h-8 w-8 rounded-full object-cover border border-gray-300" />
+                ) : (
+                  <UserCircleIcon className="h-8 w-8 text-gray-600" />
+                )}
                 <span className="hidden md:block text-sm font-medium text-gray-700">{name ? name : "Dashboard"}</span>
               </button>
 

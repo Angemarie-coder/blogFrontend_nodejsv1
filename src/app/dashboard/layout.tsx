@@ -6,6 +6,7 @@ import AdminFooter from "@/app/dashboard/AdminFooter";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Sidebar from "@/app/dashboard/Sidebar";
 
 export default function AdminLayout({
   children,
@@ -97,12 +98,15 @@ export default function AdminLayout({
 
   // Render layout for authenticated users
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      <AdminHeader toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
-      <main className="transition-all duration-300 ease-in-out">
-        {children}
-      </main>
-      <AdminFooter />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex">
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <div className="flex-1 flex flex-col min-h-screen">
+        <AdminHeader toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+        <main className="transition-all duration-300 ease-in-out flex-1">
+          {children}
+        </main>
+        <AdminFooter />
+      </div>
     </div>
   );
 }
